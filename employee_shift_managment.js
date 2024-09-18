@@ -41,3 +41,21 @@ function calculateTotalHours(employee) {
     });
     return totalHours;
 }
+
+// Create a Function to List Employees with Free Days
+
+function listAvailableEmployees(day) {
+    let availableEmployees = [];
+    employees.forEach(employee => {
+        let isAvailable = true;
+        employee.shifts.forEach(shift => {
+            if (shift.day === day) {
+                isAvailable = false;
+            }
+        });
+        if (isAvailable) {
+            availableEmployees.push(employee);
+        }
+    });
+    return availableEmployees;
+}
