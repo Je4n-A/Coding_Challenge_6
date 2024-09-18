@@ -32,3 +32,12 @@ function assignShift(employee, day, hours) {
     employee.shifts.push({ day: day, hours: hours });
 }
 
+//Create a Function to Calculate Total Hours Worked 
+
+function calculateTotalHours(employee) {
+    let totalHours = 0;
+    employee.shifts.forEach(shift => {
+        totalHours += shift.hours;
+    });
+    return totalHours;
+}
