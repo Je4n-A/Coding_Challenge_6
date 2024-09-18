@@ -11,6 +11,7 @@ let employees = [
 ];
 
 //Create a Function to Display Employee Shift Details
+
 function displayEmployeeShifts(employee) {
     console.log(`Employee Name: ${employee.name}`);
     console.log('Shifts:');
@@ -18,3 +19,16 @@ function displayEmployeeShifts(employee) {
         console.log(`Day: ${shift.day}, Hours: ${shift.hours}`);
     });
 }
+
+//Create a Function to Assign a New Shift 
+
+function assignShift(employee, day, hours) {
+    employee.shifts.forEach(shift => {
+        if (shift.day === day) {
+            console.log('Shift already exists');
+            return;
+        }
+    });
+    employee.shifts.push({ day: day, hours: hours });
+}
+
